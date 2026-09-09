@@ -1,0 +1,46 @@
+<div class="carrito-container">
+  @if (itemsCarrito.length > 0) {
+    <table class="carrito-tabla">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Precio</th>
+          <th>Cantidad</th>
+          <th>Subtotal</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of itemsCarrito; track item.id) {
+          <tr>
+            <td>{{ item.nombre }}</td>
+            <td>Q{{ item.precio }}</td>
+            <td>
+              <input 
+                type="number" 
+                min="1" 
+                [value]="item.cantidad" 
+                (change)="cambiarCantidad(item.id, $event)"
+                class="input-cantidad"
+              >
+            </td>
+            <!-- Cambiado aquí: Solo pasar el objeto item -->
+            <td>Q{{ item | subtotal }}</td>
+            <td>
+              <button type="button" class="btn-eliminar" (click)="quitar(item.id)">
+                Eliminar
+              </button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+
+    <div class="carrito-total">
+      <span>Total: </span>
+      <strong class="monto">Q{{ calcularTotal() }}</strong>
+    </div>
+  } @else {
+    <p class="empty-msg">No has añadido ningún producto todavía.</p>
+  }
+</div>

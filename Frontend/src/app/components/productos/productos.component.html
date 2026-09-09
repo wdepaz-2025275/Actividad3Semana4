@@ -1,0 +1,13 @@
+<div class="productos-grid">
+  @for (producto of productosDisponibles; track producto.id) {
+    <div class="card-producto">
+      <h3>{{ producto.nombre }}</h3>
+      <p class="precio">Q{{ producto.precio }}</p>
+      <button type="button" class="btn-agregar" (click)="agregar(producto)">
+        Agregar al Carrito
+      </button>
+    </div>
+  } @empty {
+    <p>Cargando productos...</p>
+  }
+</div>
