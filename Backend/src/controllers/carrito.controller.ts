@@ -5,7 +5,10 @@ import { Producto } from '../models/producto.model';
 const catalogo: Producto[] = [
   { id: 1, nombre: 'Laptop Dell', precio: 4500, cantidad: 1 },
   { id: 2, nombre: 'Mouse Inalámbrico', precio: 150, cantidad: 1 },
-  { id: 3, nombre: 'Teclado Mecánico', precio: 350, cantidad: 1 }
+  { id: 3, nombre: 'Teclado Mecánico', precio: 350, cantidad: 1 },
+  { id: 4, nombre: 'Bocinas Bluetooth', precio: 250, cantidad: 1 },
+  { id: 5, nombre: 'Mouse pad', precio: 50, cantidad: 1 },
+  { id: 6, nombre: 'Camaras para PC', precio: 100, cantidad: 1 },
 ];
 
 export const obtenerProductos = (req: Request, res: Response) => {
