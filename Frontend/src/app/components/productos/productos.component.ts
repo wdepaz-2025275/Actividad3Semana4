@@ -22,7 +22,7 @@ export class ProductosComponent implements OnInit {
     this.carritoService.obtenerCatalogo().subscribe({
       next: (data) => {
         this.productosDisponibles = data;
-        this.cdr.detectChanges(); // Notifica a la vista que los datos ya llegaron
+        this.cdr.detectChanges();
       },
       error: (err) => console.error('Error al conectar con la API backend:', err)
     });
