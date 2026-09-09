@@ -7,7 +7,7 @@ import { Producto } from '../models/producto.model';
   providedIn: 'root'
 })
 export class CarritoService {
-  // Asegúrate de que el puerto coincida con tu backend (por ejemplo: 3000 o 5000)
+
   private apiUrl = 'http://localhost:3000/api/productos'; 
 
   private itemsCarrito: Producto[] = [];
@@ -20,7 +20,7 @@ export class CarritoService {
     return this.http.get<Producto[]>(this.apiUrl);
   }
 
-  // Métodos del carrito...
+  // Métodos del carrito
   agregarProducto(producto: Producto): void {
     const itemExistente = this.itemsCarrito.find(p => p.id === producto.id);
     if (itemExistente) {
