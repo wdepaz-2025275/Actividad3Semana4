@@ -22,7 +22,7 @@ export class CarritoComponent implements OnInit {
   ngOnInit(): void {
     this.carritoService.carrito$.subscribe(datos => {
       this.itemsCarrito = datos;
-      this.cdr.detectChanges(); // Forzar la actualización visual
+      this.cdr.detectChanges(); 
     });
   }
 
